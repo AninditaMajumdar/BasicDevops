@@ -1,4 +1,7 @@
 node {
+  tools {
+    maven 'mvn'
+  }
   stage('Preparation'){
 checkout scm
   }
