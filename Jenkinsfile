@@ -1,3 +1,3 @@
 node {
-checkout https://github.com/AninditaMajumdar/DevopsRepository.git
+git 'https://github.com/AninditaMajumdar/DevopsRepository.git'
 }
