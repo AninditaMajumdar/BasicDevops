@@ -3,7 +3,9 @@ node {
       checkout scm
   }
   stage('Build'){
-      withMaven(maven: 'mvn') {
-        sh "mvn install -DskipTests=true" }
-  }
+      def mvnHome = tool name: 'Apache Maven 3.6.0', type: 'maven'
+      sh "${mvnHome}/bin/mvn -B -DskipTests clean package"
+        sh "mvn install -DskipTests=true" 
+ }
+  
 }
