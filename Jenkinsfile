@@ -4,6 +4,6 @@ checkout scm
   }
   stage('Build'){
   
-    mvn "mvn clean install"
+    sh "mvn install -DskipTests=true"
   }
 }
