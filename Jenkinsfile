@@ -1,3 +1,3 @@
 node {
-checkout scm
+checkout https://github.com/AninditaMajumdar/DevopsRepository.git
 }
