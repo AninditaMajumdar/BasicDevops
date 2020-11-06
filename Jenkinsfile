@@ -11,7 +11,7 @@ node
   }
   stage('Sonarqube')
   {
-       withSonarQubeEnv('jenkinstosonarqube')
+       withSonarQubeEnv('sonarqube')
         {
             sh "${mvnHome}/bin/mvn sonar:sonar -Dsonar.host.url=https://sonarcloud.io/projects"
         }
