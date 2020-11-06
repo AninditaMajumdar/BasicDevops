@@ -11,13 +11,8 @@ node
   }
   stage('Sonarqube')
   {
-    environment 
-    {
-        scannerHome = tool 'SonarQubeScanner'
-    }
-    steps 
-    {
-        withSonarQubeEnv('jenkinstosonarqube')
+       def scannerHome = tool 'SonarQubeScanner'
+       withSonarQubeEnv('jenkinstosonarqube')
         {
             sh "${scannerHome}/bin/sonar-scanner"
         }
