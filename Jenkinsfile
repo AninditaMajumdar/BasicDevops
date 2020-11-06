@@ -7,7 +7,7 @@ node
   }
   stage('Build')
   {
-      sh "${mvnHome}/bin/mvn -B -DskipTests clean package"
+      sh "${mvnHome}/bin/mvn -B -DskipTests clean install"
   }
   stage('Sonarqube')
   {
