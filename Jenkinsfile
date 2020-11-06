@@ -1,20 +1,19 @@
 node 
 {
+   def mvnHome = tool name: 'mvn', type: 'maven'
   stage('Preparation')
   {
       checkout scm
   }
   stage('Build')
   {
-      def mvnHome = tool name: 'mvn', type: 'maven'
       sh "${mvnHome}/bin/mvn -B -DskipTests clean package"
   }
   stage('Sonarqube')
   {
-       def scannerHome = tool 'SonarQubeScanner'
        withSonarQubeEnv('jenkinstosonarqube')
         {
-            sh "${scannerHome}/bin/sonar-scanner"
+            sh "${mvnHome}/bin/mvn sonar:sonar -Dsonar.host.url=https://sonarcloud.io/projects"
         }
     
   }
