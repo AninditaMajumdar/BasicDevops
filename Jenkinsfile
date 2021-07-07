@@ -1,4 +1,4 @@
-node 
+/*node 
 {
    def mvnHome = tool name: 'mvn', type: 'maven'
   stage('Preparation')
@@ -18,3 +18,4 @@ node
     
   }
 }
+*/
